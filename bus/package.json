@@ -17,7 +17,7 @@
   "dependencies": {
     "babel": "5.8.34",
     "express": "4.13.3",
-    "lodash": "3.10.1"
+    "lodash": "4.17.15"
   },
   "devDependencies": {
     "babel-istanbul": "0.5.9",
