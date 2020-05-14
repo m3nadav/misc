@@ -1,0 +1,8 @@
+# create a local certificate authority for the computer 
+makecert -n "CN=PowerShell Local Certificate Root" -a sha1 -eku 1.3.6.1.5.5.7.3.3 -r -sv root.pvk root.cer -ss Root -sr localMachine
+# create a certificate file in root.cer using the private key that is stored in the root.pvk file.
+makecert -pe -n "CN=PowerShell User" -ss MY -a sha1 -eku 1.3.6.1.5.5.7.3.3 -iv root.pvk -ic root.cer
+# sign the script from powershell
+Set-AuthenticodeSignature C:\MyScript.ps1 @(Get-ChildItem cert:\CurrentUser\My -codesigning)[0]
+# can also look at the validty of the signature
+Get-AuthenticodeSignature MyScript.ps1 | fl

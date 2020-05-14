@@ -1,0 +1,1 @@
+$host.Runspace.RunspaceConfiguration.Assemblies
