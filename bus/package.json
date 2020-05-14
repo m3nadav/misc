@@ -1,0 +1,31 @@
+{
+  "name": "mermers-bus-calculator",
+  "version": "0.12.1",
+  "private": true,
+  "scripts": {
+    "mocha": "mocha test/ --recursive --reporter spec --ignore-leaks -t 5000 --compilers js:babel/register",
+    "test": "./run-tests.sh",
+    "validate": "! find test -name \"*.js\" -print | xargs grep \".only(\""
+  },
+  "config": {
+    "precommit": {
+      "lint": false,
+      "validate": true,
+      "test": false
+    }
+  },
+  "dependencies": {
+    "babel": "5.8.34",
+    "express": "4.13.3",
+    "lodash": "3.10.1"
+  },
+  "devDependencies": {
+    "babel-istanbul": "0.5.9",
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "chai-things": "^0.2.0",
+    "mocha": "~2.0.1",
+    "precommit-hook": "0.3.10",
+    "should": "~1.2.1"
+  }
+}
